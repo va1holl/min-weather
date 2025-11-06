@@ -1,0 +1,80 @@
+/* === Базовая тема, ничего лишнего === */
+:root {
+  --bg: #e8f0ff;
+  --card: #0f1b2d;
+  --text: #0a0a0a;
+  --muted: #7d8da5;
+  --white: #ffffff;
+  --btn: #3aa0ff;
+  --btn-text: #e9f4ff;
+  --error: #e74c3c;
+}
+
+* { box-sizing: border-box; }
+
+/* Центрируем весь блок по экрану */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+}
+
+/* Карточка */
+.wrap {
+  width: 360px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  padding: 18px 16px 14px;
+  box-shadow: 0 8px 24px rgba(15, 27, 45, 0.12);
+}
+
+h1 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.controls { display: flex; gap: 8px; margin-bottom: 10px; }
+.controls input {
+  flex: 1; height: 36px; border-radius: 8px; border: 1px solid #c8d6ff;
+  background: #0f1b2d; color: var(--white); padding: 0 10px; outline: none;
+}
+.controls input::placeholder { color: #9fb2d1; }
+.controls button {
+  height: 36px; border: none; border-radius: 999px; background: var(--btn);
+  color: var(--btn-text); font-weight: 700; padding: 0 14px; cursor: pointer;
+}
+.controls button:disabled { opacity: .5; cursor: not-allowed; }
+
+/* История поиска — видна всегда */
+.history {
+  margin: 6px 0 10px;
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+}
+.history .chip {
+  border: 1px solid #c8d6ff; background: #eaf2ff; color: #0f1b2d;
+  border-radius: 999px; padding: 6px 10px; font-weight: 700; cursor: pointer;
+}
+.history .chip:hover { opacity: .9; }
+.history .clear { border: 1px solid #ffb3b3; background: #ffe5e5; color: #7a1a1a; }
+.history .muted { color: var(--muted); font-size: 12px; align-self: center; }
+
+/* Карточка погоды */
+.card {
+  background: var(--card); color: var(--white);
+  border-radius: 16px; padding: 16px; min-height: 170px;
+  display: grid; gap: 6px; place-content: center; text-align: center;
+}
+.city { font-weight: 800; opacity: .9; }
+.temp { font-size: 44px; font-weight: 800; }
+.desc { opacity: .9; }
+.row { display: flex; gap: 6px; justify-content: center; opacity: .95; }
+.placeholder { opacity: .7; }
+
+.error { margin-top: 10px; color: var(--error); font-weight: 700; text-align: center; }
+.counter { margin-top: 10px; text-align: center; font-size: 12px; color: var(--muted); }
